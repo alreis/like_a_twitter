@@ -20,10 +20,8 @@
     "semantic-ui-react": "^0.88.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "serve": "node index",
+    "start": "node index"
   },
   "eslintConfig": {
     "extends": "react-app"
