@@ -20,8 +20,10 @@
     "semantic-ui-react": "^0.88.1"
   },
   "scripts": {
-    "serve": "node index",
-    "start": "node index"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,5 +39,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "https://safe-escarpment-07340.herokuapp.com/"
 }
