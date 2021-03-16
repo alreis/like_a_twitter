@@ -61,7 +61,7 @@ const DELETE_COMMENT_MUTATION = gql`
       id
       comments {
         id
-        username
+        userName
         createdAt
         body
       }

@@ -25,7 +25,7 @@ function SinglePost(props) {
   const [comment, setComment] = useState('');
 
   const {
-    data: { getPost }
+    data: { getPost } = {}
   } = useQuery(FETCH_POST_QUERY, {
     variables: {
       postId
@@ -55,7 +55,7 @@ function SinglePost(props) {
       id,
       body,
       createdAt,
-      username,
+      userName,
       comments,
       likes,
       likeCount,
@@ -75,7 +75,7 @@ function SinglePost(props) {
           <Grid.Column width={10}>
             <Card fluid>
               <Card.Content>
-                <Card.Header>{username}</Card.Header>
+                <Card.Header>@{userName}</Card.Header>
                 <Card.Meta>{moment(createdAt).fromNow()}</Card.Meta>
                 <Card.Description>{body}</Card.Description>
               </Card.Content>
@@ -96,7 +96,7 @@ function SinglePost(props) {
                     </Label>
                   </Button>
                 </MyPopup>
-                {user && user.username === username && (
+                {user && user.userName === userName && (
                   <DeleteButton postId={id} callback={deletePostCallback} />
                 )}
               </Card.Content>
@@ -131,10 +131,10 @@ function SinglePost(props) {
             {comments.map((comment) => (
               <Card fluid key={comment.id}>
                 <Card.Content>
-                  {user && user.username === comment.username && (
+                  {user && user.userName === comment.userName && (
                     <DeleteButton postId={id} commentId={comment.id} />
                   )}
-                  <Card.Header>{comment.username}</Card.Header>
+                  <Card.Header>{comment.userName}</Card.Header>
                   <Card.Meta>{moment(comment.createdAt).fromNow()}</Card.Meta>
                   <Card.Description>{comment.body}</Card.Description>
                 </Card.Content>
@@ -149,14 +149,14 @@ function SinglePost(props) {
 }
 
 const SUBMIT_COMMENT_MUTATION = gql`
-  mutation($postId: String!, $body: String!) {
+  mutation($postId: ID!, $body: String!) {
     createComment(postId: $postId, body: $body) {
       id
       comments {
         id
         body
         createdAt
-        username
+        userName
       }
       commentCount
     }
@@ -169,15 +169,15 @@ const FETCH_POST_QUERY = gql`
       id
       body
       createdAt
-      username
+      userName
       likeCount
       likes {
-        username
+        userName
       }
       commentCount
       comments {
         id
-        username
+        userName
         createdAt
         body
       }

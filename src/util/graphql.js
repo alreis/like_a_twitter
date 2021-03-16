@@ -6,15 +6,15 @@ export const FETCH_POSTS_QUERY = gql`
       id
       body
       createdAt
-      username
+      userName
       likeCount
       likes {
-        username
+        userName
       }
       commentCount
       comments {
         id
-        username
+        userName
         createdAt
         body
       }

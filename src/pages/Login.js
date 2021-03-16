@@ -11,7 +11,7 @@ function Login(props) {
   const [errors, setErrors] = useState({});
 
   const { onChange, onSubmit, values } = useForm(loginUserCallback, {
-    username: '',
+    userName: '',
     password: ''
   });
 
@@ -42,10 +42,10 @@ function Login(props) {
         <Form.Input
           label="Username"
           placeholder="Username.."
-          name="username"
+          name="userName"
           type="text"
-          value={values.username}
-          error={errors.username ? true : false}
+          value={values.userName}
+          error={errors.userName ? true : false}
           onChange={onChange}
         />
         <Form.Input
@@ -75,11 +75,11 @@ function Login(props) {
 }
 
 const LOGIN_USER = gql`
-  mutation login($username: String!, $password: String!) {
-    login(username: $username, password: $password) {
+  mutation login($userName: String!, $password: String!) {
+    login(userName: $userName, password: $password) {
       id
       email
-      username
+      userName
       createdAt
       token
     }
