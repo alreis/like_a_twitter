@@ -7,7 +7,7 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import { setContext } from 'apollo-link-context';
 
 const httpLink = createHttpLink({
-  uri: 'https://safe-escarpment-07340.herokuapp.com/'
+  uri: 'https://server-awk.herokuapp.com/'
 });
 
 const authLink = setContext(() => {
