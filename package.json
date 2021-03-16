@@ -45,10 +45,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "webpack": "^4.44.2",
-    "webpack-cli": "^4.5.0",
-    "webpack-dev-server": "^3.11.1"
-  },
   "proxy": "https://server-awk.herokuapp.com/"
 }
