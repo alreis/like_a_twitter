@@ -10,17 +10,23 @@ function DeleteButton({ postId, commentId, callback }) {
   const [confirmOpen, setConfirmOpen] = useState(false);
 
   const mutation = commentId ? DELETE_COMMENT_MUTATION : DELETE_POST_MUTATION;
-
+    
   const [deletePostOrMutation] = useMutation(mutation, {
+    
     update(proxy) {
       setConfirmOpen(false);
-      if (!commentId) {
-        const data = proxy.readQuery({
-          query: FETCH_POSTS_QUERY
-        });
-        data.getPosts = data.getPosts.filter((p) => p.id !== postId);
-        proxy.writeQuery({ query: FETCH_POSTS_QUERY, data });
-      }
+
+      const data = proxy.readQuery({
+        query: FETCH_POSTS_QUERY
+      });
+      const newData = data.getPosts.filter((p) => p.id !== postId);
+      proxy.writeQuery({ query: FETCH_POSTS_QUERY,  data: {
+        ...data,
+        getPosts: {
+          newData,
+        },
+      }, });
+
       if (callback) callback();
     },
     variables: {
