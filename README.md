@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Resumo:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto é uma rede social simples, construída com React para o frontend e Node.js com GraphQL para o backend. A aplicação permite que os usuários se registrem, façam login, criem postagens, curtam e comentem em postagens de outros usuários.
 
-## Available Scripts
+## Tecnologias Utilizadas:
 
-In the project directory, you can run:
+* Frontend:
 
-### `yarn start`
+React: Biblioteca JavaScript para a construção da interface do usuário.
+Semantic UI React: Biblioteca de componentes para estilizar a interface.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Backend:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  * Node.js: Ambiente de execução JavaScript no servidor.
+  * GraphQL: Linguagem de consulta e manipulação de dados eficiente.
+  * Apollo Server: Implementação GraphQL para Node.js.
+  * MongoDB: Banco de dados NoSQL para armazenar dados.
+  * Mongoose: Biblioteca para modelar objetos MongoDB.
 
-### `yarn test`
+* Autenticação:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  * JSON Web Tokens (JWT): Utilizado para autenticar usuários e manter sessões.
 
-### `yarn build`
+* Controle de Estado:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  * Context API (React): Utilizado para gerenciar o estado global da autenticação do usuário.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Estilo e Componentes:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  * Semantic UI CSS: Estilos predefinidos para melhorar a estética.
+  * MyPopup: Componente personalizado para pop-ups informativos.
 
-### `yarn eject`
+* Manipulação de Dados:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  * Apollo Client (React Hooks): Utilizado para consumir dados do servidor GraphQL.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Roteamento:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  * React Router DOM: Utilizado para a navegação entre páginas da aplicação.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* Outros:
 
-## Learn More
+  * Moment.js: Biblioteca para manipulação de datas e horas.
+  * JWT Decode: Utilizado para decodificar tokens JWT no frontend.
+  * Service Worker: Configurado para proporcionar funcionalidades offline (PWA).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Instruções de Execução:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone o repositório.
+2. Instale as dependências utilizando npm install nos diretórios client e server.
+3. Configure o arquivo .env no diretório server com as variáveis apropriadas.
+4. Inicie o servidor com npm start no diretório server.
+5. Inicie o cliente com npm start no diretório client.
 
-### Code Splitting
+## Observações:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* Este projeto foi desenvolvido com fins educativos e pode ser expandido com novos recursos e melhorias.
+* Certifique-se de ter o Node.js e o MongoDB instalados em sua máquina antes de executar o projeto.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Licença:
+Este projeto é licenciado sob a Licença MIT.
